@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  <!-- For Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+            background-size: cover;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        .form-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* بهبود ظاهر input تاریخ */
+        #id_date {
+            background-color: #fefefe;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+    
+        #id_date:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+            outline: none;
+        }
+    
+        .pwt-datepicker-container {
+            font-family: 'Vazir', sans-serif;
+            z-index: 9999 !important;
+        }
+
+        .form-container input, .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-container input[type="text"] {
+            font-size: 16px;
+        }
+
+        .form-container input[type="date"] {
+            background: #f9f9f9;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .form-container label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: right;
+        }
+
+        .form-container .date-label {
+            text-align: left;
+        }
+
+        /* Add animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container {
+            animation: fadeIn 1s ease-out;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <h2>Package Registration Form</h2>
+        <form action="{% url 'create' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+<!-- jQuery + Persian Date Picker Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#id_date").persianDatepicker({
+            format: 'YYYY-MM-DD',
+            calendar: {
+                persian: {
+                    locale: 'fa'
+                }
+            },
+            toolbox: {
+                calendarSwitch: {
+                    enabled: false
+                },
+                todayButton: {
+                    enabled: true,
+                    text: {
+                        fa: "امروز"
+                    }
+                },
+                submitButton: {
+                    enabled: true,
+                    text: {
+                        fa: "تأیید"
+                    }
+                }
+            },
+            navigator: {
+                scroll: {
+                    enabled: false
+                }
+            },
+            initialValue: true
+        });
+    });
+</script>
+
+</body>
+</html>

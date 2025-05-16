@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 6rem;
+      margin: 0 0 20px;
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+      animation: fadeIn 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    .btn {
+      padding: 18px 60px;
+      font-size: 1.4rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ffffffcc, #ffffff99);
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      animation: fadeIn 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .btn:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .btn:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome</h1>
+
+  <a href="{% url 'create' %}" class="btn">Create</a>
+  <a href="{% url 'show' %}" class="btn">My Packages</a>
+
+</body>
+</html>
