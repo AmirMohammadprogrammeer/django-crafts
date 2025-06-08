@@ -1,0 +1,86 @@
+/* Container for each post card */
+.card-body {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem auto;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* وقتی موس روی کارت باشه کمی بزرگ‌تر بشه و سایه بیشتر */
+.card-body:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(110, 142, 251, 0.7);
+}
+
+/* عنوان پست */
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* متن پست */
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #e0e0ff;
+}
+
+/* دکمه نمایش بیشتر */
+.btn-primary {
+  background-color: #4b6cb7;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(75, 108, 183, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #394a93;
+  box-shadow: 0 6px 16px rgba(57, 74, 147, 0.8);
+}
+/* صفحه‌بندی کلی */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* لینک‌های داخل صفحه‌بندی */
+.step-links a {
+  color: #ffffff;
+  background-color: #4b6cb7;
+  padding: 0.5rem 1rem;
+  margin: 0 0.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(75, 108, 183, 0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.step-links a:hover {
+  background-color: #394a93;
+  transform: translateY(-2px);
+}
+
+/* شماره صفحه فعلی */
+.step-links .current {
+  color: #ffffff;
+  background-color: #a777e3;
+  padding: 0.5rem 1rem;
+  margin: 0 0.4rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(167, 119, 227, 0.5);
+}

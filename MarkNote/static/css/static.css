@@ -1,0 +1,134 @@
+/* استایل برای نمایش خفن متن پست */
+.post-body {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;  /* رنگ نوشته سفید */
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+body {
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;  /* رنگ نوشته در کل صفحه سفید */
+}
+
+/* افکت هاور برای جذابیت بیشتر */
+.post-body:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* انیمیشن ساده هنگام لود شدن */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* رنگ کامنت‌ها سفید */
+.media-body {
+  color: #fff;
+}
+
+/* فرم و دکمه‌ها */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  color: #fff;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+form button, 
+form input[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  background-color: #6e8efb;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover, 
+form input[type="submit"]:hover {
+  background-color: #a777e3;
+}
+.custom-navbar {
+  background: rgba(110, 142, 251, 0.95); /* رنگ آبی روشن با شفافیت کم */
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* سایه کمی پررنگ‌تر */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: saturate(180%) blur(10px); /* باعث جلوه شیشه‌ای کمی زیباتر */
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* یه خط نازک زیر نوار */
+}
+
+.custom-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-navbar .logo {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.custom-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-navbar .nav-links li {
+  margin-left: 2rem;
+}
+
+.custom-navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-links a:hover {
+  color: #ffd700; /* طلایی */
+  text-decoration: underline;
+}
